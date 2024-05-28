@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity memory is
+ port (
+	 address : in std_logic_vector(7 downto 0);
+	 data_in : in std_logic_vector(7 downto 0);
+	 write : in std_logic;
+	 clock : in std_logic;
+	 reset : in std_logic;
+	 data_out: out std_logic_vector(7 downto 0);
+	 port_in : in std_logic_vector(15 downto 0);
+	 port_out: out std_logic_vector(15 downto 0)
+	 );
+end memory;
+	architecture Behavioral of memory is
+	 component rom_128x8_sync
+	 port (
+	 address : in std_logic_vector(6 downto 0);
+	 data_out: out std_logic_vector(7 downto 0);
+	 clock : in std_logic
+	 );
+	 end component;
+	 component rw_96x8_sync
+	 port (
+	 address : in std_logic_vector(6 downto 0);
+	 data_in : in std_logic_vector(7 downto 0);
+	 write : in std_logic;
+	 clock : in std_logic;
+	 data_out: out std_logic_vector(7 downto 0)
+	 );
+	 end component;
+	 component Output_Ports
+	 port (
+	 address : in std_logic_vector(3 downto 0);
+	 data_in : in std_logic_vector(7 downto 0);
+	 write : in std_logic;
+	 clock : in std_logic;
+	 reset : in std_logic;
+	 port_out : out std_logic_vector(7 downto 0)
+	 );
+ end component;
+ signal rom_out, ram_out : std_logic_vector(7 downto 0);
+ signal output_port_addr : std_logic_vector(3 downto 0);
+ signal ram_address, rom_address: std_logic_vector(6 downto 0);
+begin
+	 ram_address <= address(6 downto 0) when address(7) = '1' else "0000000";
+	 rom_address <= address(6 downto 0) when address(7) = '0' else "0000000";
+	 output_port_addr <= address(3 downto 0) when address(7 downto 4) = x"E" else "0000";
+	 rom_128x8_sync_u: rom_128x8_sync port map (
+	 address => rom_address,
+	 clock => clock,
+	 data_out=> rom_out
+	 );
+	 rw_96x8_sync_u: rw_96x8_sync port map (
+	 address => ram_address,
+	  data_in => data_in,
+	 write => write,
+	 clock => clock,
+	 data_out=> ram_out
+	 );
+	 Output_Ports_u: Output_Ports port map (
+	 address => output_port_addr,
+	 data_in => data_in,
+	 write => write,
+	 clock => clock,
+	 reset => reset,
+	 port_out => port_out(to_integer(unsigned(output_port_addr)))
+	 );
+	 data_out <=
+	 rom_out when address < x"80" else
+	 ram_out when address < x"E0" else
+	 port_in(to_integer(unsigned(address(7 downto 4)))) when address(7 downto 4) = x"F" else
+	 x"00";
+ end Behavioral;

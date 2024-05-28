@@ -1,0 +1,15 @@
+
+State Machine - |cpu|control_unit:control_unit_module|current_state
+Name current_state.S_BRANCH_6 current_state.S_BRANCH_5 current_state.S_BRANCH_4 current_state.S_DATA_MAN_4 current_state.S_LOAD_AND_STORE_7 current_state.S_LOAD_AND_STORE_6 current_state.S_LOAD_AND_STORE_5 current_state.S_LOAD_AND_STORE_4 current_state.S_DECODE_3 current_state.S_FETCH_2 current_state.S_FETCH_1 current_state.S_FETCH_0 
+current_state.S_FETCH_0 0 0 0 0 0 0 0 0 0 0 0 0 
+current_state.S_FETCH_1 0 0 0 0 0 0 0 0 0 0 1 1 
+current_state.S_FETCH_2 0 0 0 0 0 0 0 0 0 1 0 1 
+current_state.S_DECODE_3 0 0 0 0 0 0 0 0 1 0 0 1 
+current_state.S_LOAD_AND_STORE_4 0 0 0 0 0 0 0 1 0 0 0 1 
+current_state.S_LOAD_AND_STORE_5 0 0 0 0 0 0 1 0 0 0 0 1 
+current_state.S_LOAD_AND_STORE_6 0 0 0 0 0 1 0 0 0 0 0 1 
+current_state.S_LOAD_AND_STORE_7 0 0 0 0 1 0 0 0 0 0 0 1 
+current_state.S_DATA_MAN_4 0 0 0 1 0 0 0 0 0 0 0 1 
+current_state.S_BRANCH_4 0 0 1 0 0 0 0 0 0 0 0 1 
+current_state.S_BRANCH_5 0 1 0 0 0 0 0 0 0 0 0 1 
+current_state.S_BRANCH_6 1 0 0 0 0 0 0 0 0 0 0 1 

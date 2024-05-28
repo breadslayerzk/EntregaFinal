@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -7.686
+TNS   : -4840.578
+
+Type  : Slow 1200mV 85C Model Setup 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : -2.099
+TNS   : -14.184
+
+Type  : Slow 1200mV 85C Model Hold 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : -3.626
+TNS   : -6.469
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.571
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -957.174
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : 0.374
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -6.844
+TNS   : -4290.461
+
+Type  : Slow 1200mV 0C Model Setup 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : -1.954
+TNS   : -12.900
+
+Type  : Slow 1200mV 0C Model Hold 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : -3.198
+TNS   : -5.370
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.513
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -957.174
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : 0.394
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -3.952
+TNS   : -2454.495
+
+Type  : Fast 1200mV 0C Model Setup 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : -0.816
+TNS   : -3.427
+
+Type  : Fast 1200mV 0C Model Hold 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : -2.160
+TNS   : -4.071
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -1010.240
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'cpu:cpu_u|control_unit:control_unit_module|current_state.S_DECODE_3'
+Slack : 0.418
+TNS   : 0.000
+
+------------------------------------------------------------
